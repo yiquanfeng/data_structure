@@ -1,0 +1,6 @@
+name:yiquanfeng
+gender:male
+school:beijing university of post and telecommunications
+academy:electronical enginering academy
+major:electronical enginering
+hobby:running
