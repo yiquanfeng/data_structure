@@ -38,7 +38,7 @@ void Select(HuffmanTree HT, int range, int *index1, int *index2)
 			{
 				min2 = HT[i].weight;
 				*index2 = i;
-			}
+			}//需要看看，gpt很厉害
 		}
 	}
 	if (HT[*index1].weight >= HT[*index2].weight)
@@ -163,7 +163,6 @@ void Decode(HuffmanTree *HT)
 			c = (*HT)[c].LeftChild;
 			// printf("%d\n",c);
 		}
-		// (*HT)[c].LeftChild == 0 && (*HT)[c].RightChild == 0
 		if (c <= 26 && c > 0)
 		{
 			fprintf(file3,"%c",(*HT)[c].ascii);
