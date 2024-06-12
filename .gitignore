@@ -1,6 +1,9 @@
+# the files when running code but useless
 *.exe
 *.info
 *.txt
-*.vscode
-*.md
+# editors files
+.vscode
 *.json
+# sth special
+*.md
