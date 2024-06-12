@@ -7,3 +7,4 @@
 *.json
 # sth special
 *.md
+!README.md
