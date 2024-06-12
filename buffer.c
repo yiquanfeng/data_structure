@@ -1,9 +1,60 @@
 //表示多项式的构成
 //第一种使用单纯数组，下标表示次方，存储的值表示系数
 #include <stdio.h>
-int main()
-{
-   
+#include <stdbool.h>
+
+void odd_even_sort(int arr[], int n) {
+    bool isSorted = false;
+    while (!isSorted) {
+        isSorted = true;
+        // 奇数位置比较
+        for (int i = 1; i < n; i += 2) {
+            if (arr[i] < arr[i - 1]) {
+                int temp = arr[i];
+                arr[i] = arr[i - 1];
+                arr[i - 1] = temp;
+                isSorted = false;
+            }
+        }
+        // 偶数位置比较
+        for (int i = 2; i < n; i += 2) {
+            if (arr[i] < arr[i - 1]) {
+                int temp = arr[i];
+                arr[i] = arr[i - 1];
+                arr[i - 1] = temp;
+                isSorted = false;
+            }
+        }
+    }
+}
+void bidirectional_bubble_sort(int arr[], int n) {
+    for (int i = 0; i < n / 2; i++) {
+        // 从左到右冒泡
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+        // 从右到左冒泡
+        for (int j = n - 2; j > i; j--) {
+            if (arr[j] < arr[j - 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j - 1];
+                arr[j - 1] = temp;
+            }
+        }
+    }
+}
+int main() {
+    int arr[] = {5, 2, 9, 1, 7, 3, 8, 4, 6};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    odd_even_sort(arr, n);
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
     return 0;
 }
 
