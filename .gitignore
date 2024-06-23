@@ -5,6 +5,8 @@
 # editors files
 .vscode
 *.json
-# sth special
+# sth special and attachment
+*.docx
+*.pptx
 *.md
 !README.md

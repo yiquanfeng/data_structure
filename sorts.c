@@ -38,15 +38,20 @@ void BubbleSort(element array[], int length, int whichArray) // TODO:set a flag
 {
     for (int i = 0; i < length; i++)
     {
+        int flag = 0;
         for (int j = 0; j < length - i - 1; j++)
         {
             if (array[j].Key > array[j + 1].Key)
             {
                 Swap(&array[j], &array[j + 1]);
                 MoveTimes[whichArray][2]++;
+                flag = 1;
             }
             CmpTimes[whichArray][2]++;
+
         }
+        if(flag == 0)
+              break;
     }
 }
 void InsertionSort(element array[], int length, int whichArray)
@@ -84,8 +89,8 @@ void SelectionSort(element array[], int length, int whichArray)
             if (array[j].Key < array[min_index].Key)
                 min_index = j;
             CmpTimes[whichArray][3]++;
-        }
-        Swap(&array[i], &array[min_index]);
+        }//find the minimum element index
+        Swap(&array[i], &array[min_index]);//let the minimum element to the first position
         MoveTimes[whichArray][3]++;
     }
 }
